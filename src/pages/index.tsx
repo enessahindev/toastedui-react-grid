@@ -132,16 +132,20 @@ export default function Home() {
       >
         Add Row +
       </Button>
-      <Grid
-        data={data}
-        columns={columns}
-        theme="dark"
-        pagination={true}
-        pageSize={5}
-        loading={false}
-        striped={true}
-        onRowClick={(row: any) => console.log("Row clicked:", row)}
-      />
+      <div className="w-full md:w-auto overflow-x-auto md:overflow-visible ">
+        <div className="min-w-[768px] md:w-full">
+          <Grid
+            data={data}
+            columns={columns}
+            theme="dark"
+            pagination={true}
+            pageSize={5}
+            loading={false}
+            striped={true}
+            onRowClick={(row: any) => console.log("Row clicked:", row)}
+          />
+        </div>
+      </div>
 
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
         <DialogContent>
@@ -167,6 +171,20 @@ export default function Home() {
           </Button>
         </DialogContent>
       </Dialog>
+      <div className="flex text-center items-center justify-center mt-4">
+        <p className="mr-3">&copy; 2025 Toasted UI | All rights reserved.</p>
+        <p>
+          Made with ❤️ by{" "}
+          <a
+            href="https://enessahin.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-600"
+          >
+            Enes Şahin
+          </a>
+        </p>
+      </div>
     </div>
   );
 }
